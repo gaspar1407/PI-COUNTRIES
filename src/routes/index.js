@@ -87,13 +87,6 @@ router.get("/countries/:id", async (req, res) => {
   } else res.status(404).send("No country with that id was found");
 });
 
-router.get("/activitiesCreate", async function (req, res) {
-  const actividadesCreadas = await Activity.findAll();
-  if (actividadesCreadas) {
-    return res.json(actividadesCreadas);
-  } else res.status(404).send("No hay actividades creadas");
-});
-
 //----------------------/POST--------------------------------
 
 router.post("/activities", async (req, res) => {
